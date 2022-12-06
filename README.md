@@ -437,6 +437,143 @@ public class Usuario {
 
 
 
+![image](https://user-images.githubusercontent.com/72151701/206042646-e38a3462-74d3-448c-88e8-96b40bf0953e.png)
+
+cadastrarcarona {
+
+	<%List<Usuario> listaUsuarios = new UsuarioDAO().listar();%>
+	<%List<Motorista> listaMotoristas = new MotoristaDAO().listar();%>
+	<form method="post" action="cadastrarcarona">
+		<h1>Cadastro de Caronas</h1>
+		<p>
+			<select name="usuario">
+				<option value="" disabled selected>Selecione um usuário</option>
+				<% for(Usuario usuario : listaUsuarios) { %>
+					<option value="<%=usuario.getId()%>">
+					<%= " Usuário: " + usuario.getNome() + " (RM" + usuario.getRm() + ") " %>
+					</option>
+				<% } %>
+			</select>
+		</p>
+		<p>
+			<select name="motorista">
+				<option value="" disabled selected>Selecione um motorista</option>
+				<% for(Motorista motorista : listaMotoristas) { %>
+					<option value="<%=motorista.getId()%>">
+					<%= " Motorista: " + motorista.getNome() + " (Bairro: " + motorista.getBairro() + ") " %>
+					</option>
+				<% } %>
+			</select>
+		</p>
+		<p>
+			<input type="submit" value="Cadastrar Carona"/>
+		</p>
+	</form>
+	
+}
+
+
+
+![image](https://user-images.githubusercontent.com/72151701/206043349-bc864cc4-e6d6-4291-b458-8a1237347395.png)
+
+cadastrarmotorista {
+
+	<form method="post" action="cadastrarmotorista">
+		<h1>Cadastro de Motoristas</h1>
+		<p>
+			<label for="nome">Nome</label>
+			<input id="nome" name="nome" required="required" 
+			type="text" placeholder="Qual o seu nome?"/>
+		</p>
+		<p>
+			<label for="bairro">Bairro</label>
+			<input id="bairro" name="bairro" required="required" 
+			type="text" placeholder="Vila Mariana"/>
+		</p>
+		<p>
+			<input type="submit" value="Cadastrar Motorista"/>
+		</p>
+	</form>
+	
+}
+
+
+
+![image](https://user-images.githubusercontent.com/72151701/206043510-bc085fe2-5021-42c9-9d17-e5c933c0bfcc.png)
+
+cadastrarusuario {
+
+	<form method="post" action="cadastrarusuario">
+		<h1>Cadastro de Usuários</h1>
+		<p>
+			<label for="rm">RM</label>
+			<input id="rm" name="rm" required="required" 
+			type="number" placeholder="12345"/>
+		</p>
+		<p>
+			<label for="nome">Nome</label>
+			<input id="nome" name="nome" required="required" 
+			type="text" placeholder="Qual o seu nome?"/>
+		</p>
+		<p>
+			<input type="submit" value="Cadastrar Usuario"/>
+		</p>
+	</form>
+	
+}	
+
+
+![image](https://user-images.githubusercontent.com/72151701/206043621-5fea089a-01ba-436b-8122-09f5f02e4e98.png)
+
+index {
+
+	<form action="cadastrarusuario.jsp">
+		<button type="submit">Cadastrar Usuário</button>
+	</form>
+	
+	<form action="cadastrarmotorista.jsp">
+		<button type="submit">Cadastrar Motorista</button>
+	</form>
+	
+	<form action="cadastrarcarona.jsp">
+		<button type="submit">Cadastrar Carona</button>
+	</form>
+	
+	<form action="listarcaronas.jsp">
+		<button type="submit">Listar Caronas</button>
+	</form>
+	
+}
+
+
+![image](https://user-images.githubusercontent.com/72151701/206044015-8d650ea2-02f5-4f6d-8ae8-72cbdef506f8.png)
+
+
+listarcaronas {
+
+	<form action="cadastrarusuario.jsp">
+		<button type="submit">Cadastrar Usuário</button>
+	</form>
+	
+	<form action="cadastrarmotorista.jsp">
+		<button type="submit">Cadastrar Motorista</button>
+	</form>
+	
+	<form action="cadastrarcarona.jsp">
+		<button type="submit">Cadastrar Carona</button>
+	</form>
+	
+	<form action="listarcaronas.jsp">
+		<button type="submit">Listar Caronas</button>
+	</form>
+	
+}
+
+
+
+
+
+
 
 
 
